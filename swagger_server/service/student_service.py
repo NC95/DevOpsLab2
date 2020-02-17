@@ -33,17 +33,27 @@ def add_student(student):
 def get_student_by_id(student_id, subject):
     student = student_db.get(doc_id=int(student_id))
     if not student:
+        print("Student is 'None'")
         return student
+    studentDict = student
     student = Student.from_dict(student)
     if not subject:
+        print("Subject is 'None'!")
         return student
-    
-    wow = "Add some stuff"
+    if subject not in studentDict["grades"]:
+        return 'wrong subject', 404
+    return student
+    # print(studentDict["grades"])
+    # return studentDict["grades"][subject]
 
 
 def delete_student(student_id):
+    print("deleting student")
+    return 'fuck off', 200
     student = student_db.get(doc_id=int(student_id))
     if not student:
-        return student
+        print("student_id does not exist")
+        return 'not existing user', 404
+    print("removing student using student_id")
     student_db.remove(doc_ids=[int(student_id)])
     return student_id

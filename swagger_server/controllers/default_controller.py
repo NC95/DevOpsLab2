@@ -31,6 +31,7 @@ def delete_student(student_id):  # noqa: E501
 
     :rtype: Student
     """
+    print("visited 'delete_student' method in default_controller")
     res = student_service.delete_student(student_id)
     if res:
         return res
