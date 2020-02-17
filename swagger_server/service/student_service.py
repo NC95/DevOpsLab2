@@ -49,7 +49,6 @@ def get_student_by_id(student_id, subject):
 
 def delete_student(student_id):
     print("deleting student")
-    return 'fuck off', 200
     student = student_db.get(doc_id=int(student_id))
     if not student:
         print("student_id does not exist")
