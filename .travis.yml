@@ -29,7 +29,7 @@ script:
 - node_modules/.bin/newman run tests/postman_collection.json -e tests/postman_environment.json
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
-- docker tag my_docker_reposetory/swagger_server my_docker_reposetory/swagger_server
+- docker tag nicoja/dev_ops_lab_2:tagname nicoja/dev_ops_lab_2:tagname
 - docker push nicoja/dev_ops_lab_2:tagname
 env:
   global:
