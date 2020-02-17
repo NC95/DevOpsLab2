@@ -16,6 +16,12 @@ student_db = TinyDB(db_file_path)
 
 
 def add_student(student):
+    if not student.first_name:
+        return 'unspecified first name', 405
+
+    if not student.last_name:
+        return 'unspecified last name', 405
+
     queries = []
     query = Query()
     queries.append(query.first_name == student.first_name)
