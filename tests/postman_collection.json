@@ -2053,13 +2053,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/student/?last_name={{last_name}}",
+							"raw": "{{baseUrl}}/student/{{student_id}}?last_name={{last_name}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"student",
-								""
+								"{{student_id}}"
 							],
 							"query": [
 								{
